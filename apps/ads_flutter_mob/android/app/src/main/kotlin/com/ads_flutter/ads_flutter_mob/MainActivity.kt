@@ -1,4 +1,4 @@
-package com.plat_ads_flutter.ads_flutter
+package com.ads_flutter.ads_flutter_mob
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" filepath="$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_ads_flutter.iml" filepath="$PROJECT_DIR$/melos_ads_flutter.iml" />
+    </modules>
+  </component>
+</project>
