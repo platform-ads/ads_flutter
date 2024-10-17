@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml"
-        filepath="$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_mob/melos_ads_flutter_mob.iml"
-        filepath="$PROJECT_DIR$/apps/ads_flutter_mob/melos_ads_flutter_mob.iml" />
-      <module fileurl="file://$PROJECT_DIR$/services/feature_flag/melos_feature_flag.iml"
-        filepath="$PROJECT_DIR$/services/feature_flag/melos_feature_flag.iml" />
-      <module fileurl="file://$PROJECT_DIR$/services/firebase_manager/melos_firebase_manager.iml"
-        filepath="$PROJECT_DIR$/services/firebase_manager/melos_firebase_manager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/home/melos_home.iml"
-        filepath="$PROJECT_DIR$/libraries/home/melos_home.iml" />
-      <module fileurl="file://$PROJECT_DIR$/melos_ads_flutter.iml"
-        filepath="$PROJECT_DIR$/melos_ads_flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" filepath="$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_mob/melos_ads_flutter_mob.iml" filepath="$PROJECT_DIR$/apps/ads_flutter_mob/melos_ads_flutter_mob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/feature_flag/melos_feature_flag.iml" filepath="$PROJECT_DIR$/services/feature_flag/melos_feature_flag.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/firebase_manager/melos_firebase_manager.iml" filepath="$PROJECT_DIR$/services/firebase_manager/melos_firebase_manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/home/melos_home.iml" filepath="$PROJECT_DIR$/libraries/home/melos_home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_ads_flutter.iml" filepath="$PROJECT_DIR$/melos_ads_flutter.iml" />
     </modules>
   </component>
 </project>
