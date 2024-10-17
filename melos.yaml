@@ -4,8 +4,28 @@ name: ads_flutter
 packages:
   - "apps/*"
   - "libraries/**"
+  - "services/**"
+  - "core/**"
 
-
+command:
+  bootstrap:
+    environment:
+      sdk: '>=3.0.0 <4.0.0'
+      flutter: '>= 3.19.6 <4.0.0'
+    dependencies:
+      firebase_analytics: ^11.3.3
+      firebase_core: ^3.6.0
+      firebase_crashlytics: ^4.1.3
+      firebase_remote_config: ^5.1.3
+      firebase_app_installations: ^0.3.1+4
+      bloc: ^8.1.4
+      flutter_bloc: ^8.1.6
+      equatable: ^2.0.5
+      get_it: ^7.2.0
+      injectable: ^2.1.0
+    dev_dependencies:
+      injectable_generator: ^2.1.0
+      build_runner: ^2.1.0
 scripts:
   analyze:
     exec: dart analyze .

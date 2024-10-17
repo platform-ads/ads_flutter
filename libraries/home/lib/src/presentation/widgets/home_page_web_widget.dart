@@ -2,7 +2,11 @@ import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class HomePageWebWidget extends StatelessWidget {
-  const HomePageWebWidget({super.key});
+  const HomePageWebWidget({
+    super.key,
+    required this.keyFromRemote,
+  });
+  final String keyFromRemote;
 
   @override
   Widget build(BuildContext context) {

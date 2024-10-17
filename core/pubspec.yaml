@@ -1,0 +1,32 @@
+name: core
+description: "A new Flutter module project."
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  get_it: ^7.2.0
+  injectable: ^2.1.0
+  feature_flag:
+    path: ../services/feature_flag
+  firebase_manager:
+    path: ../services/firebase_manager
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  injectable_generator: ^2.1.0
+  build_runner: ^2.1.0
+
+flutter:
+  uses-material-design: true
+  module:
+    androidX: true
+    androidPackage: com.example.core
+    iosBundleIdentifier: com.example.core
