@@ -36,9 +36,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   home:
-   path: ../../libraries/home
+    path: ../../libraries/home
   firebase_manager:
-   path: ../../services/firebase_manager
+    path: ../../services/firebase_manager
+  core:
+    path: ../../core
 
 
 dev_dependencies:
