@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: home,feature_flag,firebase_manager
+dependency_overrides:
+  feature_flag:
+    path: ..\\..\\services\\feature_flag
+  firebase_manager:
+    path: ..\\..\\services\\firebase_manager
+  home:
+    path: ..\\..\\libraries\\home

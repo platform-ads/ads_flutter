@@ -1,7 +1,12 @@
 import 'package:ads_flutter_mob/features/home/home_feature.dart';
+import 'package:core/locator/locator.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseManager.initializeApp();
+  await setupLocator();
   runApp(const MyApp());
 }
 
