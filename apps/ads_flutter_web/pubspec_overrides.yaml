@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: home
+dependency_overrides:
+  home:
+    path: ..\\..\\libraries\\home
