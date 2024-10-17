@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "470337389105",
+    "project_id": "platform-ads-flutter",
+    "storage_bucket": "platform-ads-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470337389105:android:ffb189db7a48a3a9968b10",
+        "android_client_info": {
+          "package_name": "com.ads_flutter.ads_flutter_mob"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIjrhJCfaL_8D-moK7mHpCHzKg15DBrYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

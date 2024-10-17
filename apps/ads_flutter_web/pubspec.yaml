@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   home:
    path: ../../libraries/home
+  firebase_manager:
+   path: ../../services/firebase_manager
 
 
 dev_dependencies:
