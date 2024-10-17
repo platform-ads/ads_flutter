@@ -5,6 +5,7 @@ packages:
   - "apps/*"
   - "libraries/**"
   - "services/**"
+  - "core/**"
 
 command:
   bootstrap:
@@ -20,6 +21,11 @@ command:
       bloc: ^8.1.4
       flutter_bloc: ^8.1.6
       equatable: ^2.0.5
+      get_it: ^7.2.0
+      injectable: ^2.1.0
+    dev_dependencies:
+      injectable_generator: ^2.1.0
+      build_runner: ^2.1.0
 scripts:
   analyze:
     exec: dart analyze .

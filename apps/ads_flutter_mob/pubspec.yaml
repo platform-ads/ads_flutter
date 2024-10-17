@@ -20,6 +20,8 @@ dependencies:
     path: ../../libraries/home
   firebase_manager:
     path: ../../services/firebase_manager
+  core:
+    path: ../../core
 
 dev_dependencies:
   flutter_test:

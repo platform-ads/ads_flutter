@@ -14,8 +14,11 @@ dependencies:
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
-  firebase_manager:
-   path: ../../services/firebase_manager
+
+  feature_flag:
+   path: ../../services/feature_flag
+  core:
+    path: ../../core
 
 dev_dependencies:
   flutter_test:
