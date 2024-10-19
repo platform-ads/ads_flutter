@@ -5,37 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "ads_flutter_mob",
-            "cwd": "apps\\ads_flutter_mob",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "ads_flutter_mob (profile mode)",
-            "cwd": "apps\\ads_flutter_mob",
+            "name": "Flutter Web",
+            "program": "apps/ads_flutter_web/lib/main.dart",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "debug",
+            "deviceId": "chrome" // Para rodar no navegador Chrome
         },
         {
-            "name": "ads_flutter_mob (release mode)",
-            "cwd": "apps\\ads_flutter_mob",
+            "name": "Flutter Mobile",
+            "program": "apps/ads_flutter_mob/lib/main.dart",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "ads_flutter_web",
-            "cwd": "apps\\ads_flutter_web",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "ads_flutter_web (profile mode)",
-            "cwd": "apps\\ads_flutter_web",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "debug"
         }
     ]
 }

@@ -12,10 +12,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final remoteConfig = locator.get<FirebaseFeatureFlag>();
-    final string = remoteConfig.getString('key');
+    final string = remoteConfig.getString('app_id_facebook');
+    final clientSecret = remoteConfig.getString('app_secret_facebook');
     if (kIsWeb) {
       return HomePageWebWidget(
-        keyFromRemote: string,
+        appid: string,
+        clientSecret: clientSecret,
       );
     } else {
       return HomePageMobileWidget(

@@ -23,6 +23,9 @@ command:
       equatable: ^2.0.5
       get_it: ^7.2.0
       injectable: ^2.1.0
+      dio: ^5.7.0
+      go_router: ^14.3.0
+      auth_buttons: ^3.0.3
     dev_dependencies:
       injectable_generator: ^2.1.0
       build_runner: ^2.1.0

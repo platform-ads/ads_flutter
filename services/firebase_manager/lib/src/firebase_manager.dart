@@ -10,7 +10,7 @@ abstract class FirebaseManager {
 
   static FirebaseManager get instance => _instance ??= FirebaseManagerImpl();
 
-  static Future<FirebaseApp> initializeApp() => Firebase.initializeApp();
+  static Future<FirebaseApp> initializeApp({FirebaseOptions? options}) => Firebase.initializeApp(options: options);
 
   static FirebaseRemoteConfig instanceFirebaseRemoteConfig() => FirebaseRemoteConfig.instance;
 
