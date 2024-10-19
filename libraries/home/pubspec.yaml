@@ -11,7 +11,6 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
-  auth_buttons: ^3.0.3
   commons:
     path: ../../services/commons
 
