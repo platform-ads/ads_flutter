@@ -25,6 +25,7 @@ command:
       injectable: ^2.1.0
       dio: ^5.7.0
       go_router: ^14.3.0
+      auth_buttons: ^3.0.3
     dev_dependencies:
       injectable_generator: ^2.1.0
       build_runner: ^2.1.0
