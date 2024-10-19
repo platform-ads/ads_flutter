@@ -140,7 +140,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
           title: const Text('Integrações'),
           actions: [
             ElevatedButton(
-              onPressed: () => loginWithFacebook,
+              onPressed: () => loginWithFacebook(),
               child: Row(
                 children: [
                   const Text('Integrar com o Facebook ADS'),
