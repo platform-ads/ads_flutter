@@ -5,8 +5,9 @@ import 'dart:html' as html;
 
 class CopyTextWidget extends StatelessWidget {
   final String textToCopy;
+  final String label;
 
-  const CopyTextWidget({super.key, required this.textToCopy});
+  const CopyTextWidget({super.key, required this.textToCopy, required this.label});
 
   void copyToClipboard() {
     // Cria um elemento de texto temporário
@@ -23,16 +24,19 @@ class CopyTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(textToCopy),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: copyToClipboard,
-          child: const Text('Copiar Texto'),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 300),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(textToCopy),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: copyToClipboard,
+            child: Text(label),
+          ),
+        ],
+      ),
     );
   }
 }

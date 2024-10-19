@@ -22,7 +22,7 @@ class HomePageWebWidget extends StatefulWidget {
 
 class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   var token = 'token não encontrado';
-  final String code = '';
+  var accountsJson = '';
   TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -59,34 +59,54 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Center(
             child: Text('Home Web'),
           ),
-          TextFormField(
-            controller: controller,
-            decoration: const InputDecoration(label: Text('Insira seu code aqui e clique no botão abaixo')),
-            onChanged: (value) {
-              setState(() {
-                controller.text = value;
-              });
-            },
-          ),
+          const SizedBox(height: 10),
           Center(
-            child: IconButton(
-              icon: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('Clique aqui para validar o token'),
-                  Icon(Icons.generating_tokens),
-                ],
+            child: SizedBox(
+              width: 400,
+              child: TextFormField(
+                controller: controller,
+                decoration: const InputDecoration(
+                    label: Text('Insira seu code do link aqui e clique no botão abaixo para validar')),
+                onChanged: (value) {
+                  setState(() {
+                    controller.text = value;
+                  });
+                },
               ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Center(
+            child: ElevatedButton(
+              child: const Text('Validar o token'),
               onPressed: () => getFacebookAccessToken(controller.text),
             ),
           ),
+          const SizedBox(height: 10),
           Center(
             child: CopyTextWidget(
               textToCopy: token,
+              label: 'Copiar token',
+            ),
+          ),
+          Divider(),
+          const SizedBox(height: 10),
+          Center(
+            child: ElevatedButton(
+              child: const Text('Trazer conta Ad'),
+              onPressed: () => getFacebookAdAccounts(token),
+            ),
+          ),
+          Text('Json valido = ${accountsJson.isEmpty ? false : true}'),
+          Center(
+            child: CopyTextWidget(
+              textToCopy: accountsJson,
+              label: 'Copiar Json de conta Ad',
             ),
           ),
         ],
@@ -159,6 +179,31 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
     } catch (e) {
       log('Error fetching access token: $e');
       return null;
+    }
+  }
+
+  Future<void> getFacebookAdAccounts(String accessToken) async {
+    final dio = Dio();
+
+    try {
+      final response = await dio.get(
+        'https://graph.facebook.com/v13.0/me/adaccounts',
+        queryParameters: {
+          'access_token': accessToken,
+          'fields': 'id,name,account_status', // Campos que você quer retornar
+        },
+      );
+
+      if (response.statusCode == 200) {
+        log('Ad Accounts: ${response.data}');
+        setState(() {
+          accountsJson = response.data.toString();
+        });
+      } else {
+        log('Failed to fetch ad accounts: ${response.data}');
+      }
+    } catch (e) {
+      log('Error fetching ad accounts: $e');
     }
   }
 }
