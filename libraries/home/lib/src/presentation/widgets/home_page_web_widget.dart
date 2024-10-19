@@ -2,7 +2,6 @@
 import 'dart:html' as html;
 import 'dart:developer';
 
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:commons/commons.dart';
 import 'package:flutter/material.dart';
 import 'package:home/src/presentation/widgets/copy_text_widget.dart';
@@ -51,7 +50,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
                 onPressed: () async {
                   return await _showDialog(context);
                 },
-                icon: const Icon(Icons.link_outlined),
+                icon: Icon(MdiIcons.linkVariant),
               ),
               const SizedBox(width: 30)
             ],
@@ -71,7 +70,8 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
               child: TextFormField(
                 controller: controller,
                 decoration: const InputDecoration(
-                    label: Text('Insira seu code do link aqui e clique no botão abaixo para validar')),
+                  label: Text('Insira seu code do link aqui e clique no botão abaixo para validar'),
+                ),
                 onChanged: (value) {
                   setState(() {
                     controller.text = value;
@@ -139,9 +139,15 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
         return AlertDialog(
           title: const Text('Integrações'),
           actions: [
-            FacebookAuthButton(
-              text: 'Integrar com o Facebook ADS',
-              onPressed: () => loginWithFacebook(),
+            ElevatedButton(
+              onPressed: () => loginWithFacebook,
+              child: Row(
+                children: [
+                  const Text('Integrar com o Facebook ADS'),
+                  const SizedBox(width: 10),
+                  Icon(MdiIcons.facebook),
+                ],
+              ),
             ),
           ],
         );
