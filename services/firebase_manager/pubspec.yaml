@@ -1,5 +1,5 @@
 name: firebase_manager
-description: "A new Flutter package project."
+description: "A package to maintain instances from Firebase Products"
 version: 0.0.1
 publish_to: none
 
