@@ -1,7 +1,7 @@
+import 'package:commons/commons.dart';
 import 'package:feature_flag/feature_flag.dart';
 import 'package:firebase_manager/firebase_manager.dart';
-import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
+
 import 'locator.config.dart';
 
 final GetIt locator = GetIt.instance;
