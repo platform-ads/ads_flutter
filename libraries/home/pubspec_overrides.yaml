@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: commons,cubit_export,feature_flag,firebase_manager
+dependency_overrides:
+  commons:
+    path: ../../services/commons
+  cubit_export:
+    path: ../../services/commons/lib/cubit_export
+  feature_flag:
+    path: ../../services/feature_flag
+  firebase_manager:
+    path: ../../services/firebase_manager

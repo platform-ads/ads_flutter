@@ -33,7 +33,9 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go("/login");
+                },
                 child: const Text(
                   'Início',
                   style: TextStyle(color: Colors.white, fontSize: 17),

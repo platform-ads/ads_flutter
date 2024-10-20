@@ -17,10 +17,10 @@ dependencies:
     path: ../services/feature_flag
   firebase_manager:
     path: ../services/firebase_manager
-  
-
   home:
     path: ../libraries/home
+  login:
+    path: ../libraries/login
 
 dev_dependencies:
   flutter_test:
