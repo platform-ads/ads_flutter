@@ -9,23 +9,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_web_plugins:
+    sdk: flutter
   cupertino_icons: ^1.0.8
+  firebase_manager:
+    path: ../../services/firebase_manager
+  core:
+    path: ../../core
+  get_it_export:
+    path: ../../services/commons/dependencies/get_it
+  injectable_export:
+    path: ../../services/commons/dependencies/injectable
   home:
     path: ../../libraries/home
-  firebase_manager:
-   path: ../../services/firebase_manager
-  commons:
-    path: ../../services/commons
-  core: 
-    path: ../../core
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  injectable_generator: ^2.6.2
 
 flutter:
   uses-material-design: true
