@@ -1,0 +1,3 @@
+library material_design_icons_export;
+
+export 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
