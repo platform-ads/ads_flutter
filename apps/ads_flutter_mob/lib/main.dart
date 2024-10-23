@@ -1,5 +1,5 @@
 import 'package:ads_flutter_mob/firebase_options.dart';
-import 'package:core/locator/locator.dart';
+import 'package:ads_flutter_mob/injection.dart';
 import 'package:core/router/core_routes.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FirebaseManager.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await setupLocator();
+  await configureDependencies();
   runApp(const MyApp());
 }
 

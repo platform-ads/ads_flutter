@@ -11,8 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  commons:
-    path: ../services/commons
+  dio_export:
+    path: ../services/commons/dependencies/dio
+  go_router_export:
+    path: ../services/commons/dependencies/go_router
+  get_it_export:
+    path: ../services/commons/dependencies/get_it
+  injectable_export:
+    path: ../services/commons/dependencies/injectable
   feature_flag:
     path: ../services/feature_flag
   firebase_manager:
@@ -27,6 +33,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
   build_runner: ^2.4.13
+  injectable_generator: ^2.6.2
   
 
 flutter:

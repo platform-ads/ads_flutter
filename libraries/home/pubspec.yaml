@@ -11,8 +11,18 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
-  commons:
-    path: ../../services/commons
+  flutter_bloc_export:
+    path: ../../services/commons/dependencies/flutter_bloc
+  go_router_export:
+    path: ../../services/commons/dependencies/go_router
+  get_it_export:
+    path: ../../services/commons/dependencies/get_it
+  injectable_export:
+    path: ../../services/commons/dependencies/injectable
+  material_design_icons_export:
+    path: ../../services/commons/dependencies/material_design_icons
+  equatable_export:
+    path: ../../services/commons/dependencies/equatable
 
   feature_flag:
    path: ../../services/feature_flag
@@ -23,6 +33,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  injectable_generator: ^2.6.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
