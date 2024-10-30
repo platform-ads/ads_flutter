@@ -221,7 +221,7 @@ packages:
     source: hosted
     version: "5.7.0"
   dio_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/commons/dependencies/dio"
       relative: true

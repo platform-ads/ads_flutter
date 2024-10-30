@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" filepath="$PROJECT_DIR$/apps/ads_flutter_web/melos_ads_flutter.iml" />
       <module fileurl="file://$PROJECT_DIR$/apps/ads_flutter_mob/melos_ads_flutter_mob.iml" filepath="$PROJECT_DIR$/apps/ads_flutter_mob/melos_ads_flutter_mob.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/commons/dev_dependencies/bloc_test/melos_bloc_test_export.iml" filepath="$PROJECT_DIR$/services/commons/dev_dependencies/bloc_test/melos_bloc_test_export.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cargo/melos_cargo.iml" filepath="$PROJECT_DIR$/cargo/melos_cargo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/melos_core.iml" filepath="$PROJECT_DIR$/core/melos_core.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/commons/dependencies/dio/melos_dio_export.iml" filepath="$PROJECT_DIR$/services/commons/dependencies/dio/melos_dio_export.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/commons/dependencies/equatable/melos_equatable_export.iml" filepath="$PROJECT_DIR$/services/commons/dependencies/equatable/melos_equatable_export.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/feature_flag/melos_feature_flag.iml" filepath="$PROJECT_DIR$/services/feature_flag/melos_feature_flag.iml" />

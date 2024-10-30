@@ -4,8 +4,8 @@ name: ads_flutter
 # A list of paths to local packages that are included in the Melos workspace. Each entry can be a specific path or a glob pattern.
 packages:
   - "apps/*"
-  - "libraries/*"
-  - "services/*"
+  - "libraries/**"
+  - "services/**"
   - "core"
   - "cargo"
 

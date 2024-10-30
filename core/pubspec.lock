@@ -237,7 +237,7 @@ packages:
     source: hosted
     version: "2.0.5"
   equatable_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../services/commons/dependencies/equatable"
       relative: true
@@ -407,7 +407,7 @@ packages:
     source: hosted
     version: "8.1.6"
   flutter_bloc_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../services/commons/dependencies/flutter_bloc"
       relative: true
