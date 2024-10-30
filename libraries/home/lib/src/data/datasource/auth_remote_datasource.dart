@@ -13,7 +13,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   Future<String> sendCodeToApi(String code, String appId, String clientSecret) async {
     try {
       final response = await apiClient.getRequest(
-        endpoint: '',
+        endpoint: '/login/',
         queryParameters: {
           "code": code,
           "client_id": appId,

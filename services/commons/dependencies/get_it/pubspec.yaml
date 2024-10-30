@@ -3,13 +3,13 @@ description: "A new Flutter package project."
 version: 0.0.1
 publish_to: none
 environment:
-  sdk: ^3.5.3
-  flutter: ">=1.17.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">= 3.19.6 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  get_it: ^8.0.0
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:
