@@ -23,6 +23,8 @@ dependencies:
     path: ../../services/commons/dependencies/material_design_icons
   equatable_export:
     path: ../../services/commons/dependencies/equatable
+  landing:
+    path: ../../libraries/landing
 
   feature_flag:
    path: ../../services/feature_flag

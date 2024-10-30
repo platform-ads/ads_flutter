@@ -127,9 +127,9 @@ packages:
     source: hosted
     version: "8.9.2"
   cargo:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "../cargo"
+      path: "../../cargo"
       relative: true
     source: path
     version: "0.0.1"
@@ -161,10 +161,10 @@ packages:
     dependency: transitive
     description:
       name: code_builder
-      sha256: f692079e25e7869c14132d39f223f8eec9830eb76131925143b2129c4bb01b37
+      sha256: "0ec10bf4a89e4c613960bf1e8b42c64127021740fb21640c29c909826a5eea3e"
       url: "https://pub.dev"
     source: hosted
-    version: "4.10.0"
+    version: "4.10.1"
   collection:
     dependency: transitive
     description:
@@ -181,6 +181,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
+  core:
+    dependency: "direct main"
+    description:
+      path: "../../core"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   crypto:
     dependency: transitive
     description:
@@ -190,7 +197,7 @@ packages:
     source: hosted
     version: "3.0.6"
   cupertino_icons:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: cupertino_icons
       sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
@@ -214,9 +221,9 @@ packages:
     source: hosted
     version: "5.7.0"
   dio_export:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
-      path: "../services/commons/dependencies/dio"
+      path: "../../services/commons/dependencies/dio"
       relative: true
     source: path
     version: "0.0.1"
@@ -237,9 +244,9 @@ packages:
     source: hosted
     version: "2.0.5"
   equatable_export:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "../services/commons/dependencies/equatable"
+      path: "../../services/commons/dependencies/equatable"
       relative: true
     source: path
     version: "0.0.1"
@@ -252,9 +259,9 @@ packages:
     source: hosted
     version: "1.3.1"
   feature_flag:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
-      path: "../services/feature_flag"
+      path: "../../services/feature_flag"
       relative: true
     source: path
     version: "0.0.1"
@@ -355,9 +362,9 @@ packages:
     source: hosted
     version: "3.6.44"
   firebase_manager:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
-      path: "../services/firebase_manager"
+      path: "../../services/firebase_manager"
       relative: true
     source: path
     version: "0.0.1"
@@ -407,9 +414,9 @@ packages:
     source: hosted
     version: "8.1.6"
   flutter_bloc_export:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "../services/commons/dependencies/flutter_bloc"
+      path: "../../services/commons/dependencies/flutter_bloc"
       relative: true
     source: path
     version: "0.0.1"
@@ -450,7 +457,7 @@ packages:
   get_it_export:
     dependency: "direct main"
     description:
-      path: "../services/commons/dependencies/get_it"
+      path: "../../services/commons/dependencies/get_it"
       relative: true
     source: path
     version: "0.0.1"
@@ -473,7 +480,7 @@ packages:
   go_router_export:
     dependency: "direct main"
     description:
-      path: "../services/commons/dependencies/go_router"
+      path: "../../services/commons/dependencies/go_router"
       relative: true
     source: path
     version: "0.0.1"
@@ -486,9 +493,9 @@ packages:
     source: hosted
     version: "2.3.2"
   home:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
-      path: "../libraries/home"
+      path: "../home"
       relative: true
     source: path
     version: "1.0.0+1"
@@ -519,7 +526,7 @@ packages:
   injectable_export:
     dependency: "direct main"
     description:
-      path: "../services/commons/dependencies/injectable"
+      path: "../../services/commons/dependencies/injectable"
       relative: true
     source: path
     version: "0.0.1"
@@ -555,13 +562,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.9.0"
-  landing:
-    dependency: "direct main"
-    description:
-      path: "../libraries/landing"
-      relative: true
-    source: path
-    version: "0.0.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -598,10 +598,10 @@ packages:
     dependency: transitive
     description:
       name: logging
-      sha256: "623a88c9594aa774443aa3eb2d41807a48486b5613e67599fb4c41c0ad47c340"
+      sha256: c8245ada5f1717ed44271ed1c26b8ce85ca3228fd2ffdb75468ab01979309d61
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.0"
+    version: "1.3.0"
   macros:
     dependency: transitive
     description:
@@ -629,7 +629,7 @@ packages:
   material_design_icons_export:
     dependency: "direct main"
     description:
-      path: "../services/commons/dependencies/material_design_icons"
+      path: "../../services/commons/dependencies/material_design_icons"
       relative: true
     source: path
     version: "0.0.1"
@@ -746,7 +746,7 @@ packages:
     source: hosted
     version: "2.0.0"
   sidebarx:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: sidebarx
       sha256: abe39d6db237fb8e25c600e8039ffab80fa7fe71acab03e9c378c31f912d2766
@@ -834,10 +834,10 @@ packages:
     dependency: transitive
     description:
       name: typed_data
-      sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
+      sha256: f9049c039ebfeb4cf7a7104a675823cd72dba8297f264b6637062516699fa006
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.2"
+    version: "1.4.0"
   vector_math:
     dependency: transitive
     description:
