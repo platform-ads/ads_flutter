@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/services/commons/dependencies/go_router/melos_go_router_export.iml" filepath="$PROJECT_DIR$/services/commons/dependencies/go_router/melos_go_router_export.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/home/melos_home.iml" filepath="$PROJECT_DIR$/libraries/home/melos_home.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/commons/dependencies/injectable/melos_injectable_export.iml" filepath="$PROJECT_DIR$/services/commons/dependencies/injectable/melos_injectable_export.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/landing/melos_landing.iml" filepath="$PROJECT_DIR$/libraries/landing/melos_landing.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/commons/dependencies/material_design_icons/melos_material_design_icons_export.iml" filepath="$PROJECT_DIR$/services/commons/dependencies/material_design_icons/melos_material_design_icons_export.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/commons/dev_dependencies/mocktail/melos_mocktail_export.iml" filepath="$PROJECT_DIR$/services/commons/dev_dependencies/mocktail/melos_mocktail_export.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_ads_flutter.iml" filepath="$PROJECT_DIR$/melos_ads_flutter.iml" />

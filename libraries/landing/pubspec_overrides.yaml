@@ -1,0 +1,12 @@
+# melos_managed_dependency_overrides: cargo,core,feature_flag,firebase_manager,home
+dependency_overrides:
+  cargo:
+    path: ..\\..\\cargo
+  core:
+    path: ..\\..\\core
+  feature_flag:
+    path: ..\\..\\services\\feature_flag
+  firebase_manager:
+    path: ..\\..\\services\\firebase_manager
+  home:
+    path: ..\\home
