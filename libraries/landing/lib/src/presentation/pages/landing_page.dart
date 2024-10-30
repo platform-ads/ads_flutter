@@ -1,3 +1,4 @@
+import 'package:core/utils/system_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:landing/landing.dart';
 
@@ -14,6 +15,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: SystemColors.scaffoldBackgroundColor,
       body: Row(
         children: [
           LandingSidebar(
@@ -38,8 +40,10 @@ class _LandingPageState extends State<LandingPage> {
                   case 2:
                   case 3:
                   default:
-                    return const Text(
-                      'Not found page',
+                    return const Center(
+                      child: Text(
+                        'Not found page',
+                      ),
                     );
                 }
               },

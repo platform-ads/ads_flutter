@@ -1,6 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
+import 'package:core/utils/system_colors.dart';
 import 'package:feature_flag/firebase/firebase_feature_flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_export/get_it.dart';
@@ -29,6 +30,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
     final appId = remoteConfig.getString('app_id_facebook');
     final redirectUri = remoteConfig.getString('redirect_uri');
     return Scaffold(
+      backgroundColor: SystemColors.scaffoldBackgroundColor,
       body: Row(
         children: [
           HomeSidebar(
