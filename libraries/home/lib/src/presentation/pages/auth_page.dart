@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_export/flutter_bloc.dart';
 import 'package:get_it_export/get_it.dart';
 import 'package:go_router_export/go_router.dart';
-import 'package:home/src/presentation/cubit/auth_cubit.dart';
+import 'package:home/src/presentation/cubit/auth/auth_cubit.dart';
 import 'package:home/src/utils/home_strings.dart';
 
 class AuthPage extends StatefulWidget {
