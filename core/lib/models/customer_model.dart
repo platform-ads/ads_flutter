@@ -3,6 +3,7 @@ import 'package:equatable_export/equatable.dart';
 
 class CustomerModel extends Equatable {
   const CustomerModel({
+    required this.userId,
     required this.username,
     required this.firstLogin,
     required this.role,
@@ -11,6 +12,7 @@ class CustomerModel extends Equatable {
     this.companyId,
   });
 
+  final String userId;
   final String username;
   final String? companyName;
   final String? companyId;
@@ -25,6 +27,7 @@ class CustomerModel extends Equatable {
         companyId: entity.companyId,
         role: entity.role,
         access: AccessModel.fromEntity(entity.access),
+        userId: entity.userId,
       );
 
   Customer toEntity() => Customer(

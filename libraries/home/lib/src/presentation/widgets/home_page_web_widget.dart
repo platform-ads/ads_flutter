@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it_export/get_it.dart';
 import 'package:landing/landing.dart';
 import 'package:material_design_icons_export/material_design_icons.dart';
+import 'package:secure_storage/secure_storage.dart';
 
 class HomePageWebWidget extends StatefulWidget {
   final Customer customer;
@@ -28,6 +29,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   var accountsJson = '';
 
   final remoteConfig = GetIt.I.get<FirebaseFeatureFlag>();
+  final secureStorage = GetIt.I.get<SecureStorageService>();
 
   @override
   void initState() {
@@ -97,6 +99,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   }
 
   Future<void> _showDialog(BuildContext context, String appId, String redirectUri) {
+    secureStorage.write('user_id', widget.customer.userId);
     return showDialog(
         context: context,
         builder: (context) {

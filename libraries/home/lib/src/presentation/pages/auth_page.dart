@@ -5,7 +5,9 @@ import 'package:flutter_bloc_export/flutter_bloc.dart';
 import 'package:get_it_export/get_it.dart';
 import 'package:go_router_export/go_router.dart';
 import 'package:home/src/presentation/cubit/auth/auth_cubit.dart';
+import 'package:home/src/presentation/cubit/home/home_cubit.dart';
 import 'package:home/src/utils/home_strings.dart';
+import 'package:secure_storage/secure_storage.dart';
 
 class AuthPage extends StatefulWidget {
   final String code;
@@ -17,7 +19,11 @@ class AuthPage extends StatefulWidget {
 
 class _AuthPageState extends State<AuthPage> {
   final authCubit = GetIt.I.get<AuthCubit>();
+  final homeCubit = GetIt.I.get<HomeCubit>();
+  final secureStorage = GetIt.I.get<SecureStorageService>();
+
   final remoteConfig = GetIt.I.get<FirebaseFeatureFlag>();
+
   @override
   void initState() {
     _sendCodeToApi();
@@ -27,6 +33,7 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> _sendCodeToApi() async {
     final appId = remoteConfig.getString('app_id_facebook');
     final clientSecret = remoteConfig.getString('app_secret_facebook');
+
     await authCubit.sendCode(
       code: widget.code,
       appId: appId,
@@ -39,8 +46,10 @@ class _AuthPageState extends State<AuthPage> {
     return Scaffold(
       backgroundColor: SystemColors.lightGray,
       body: BlocConsumer<AuthCubit, AuthState>(
-        listener: (context, state) {
+        listener: (context, state) async {
           if (state is AuthSuccess) {
+            final userId = await secureStorage.read('user_id');
+            homeCubit.updateFirstLogin(userId!);
             context.pushReplacementNamed('/');
           }
         },

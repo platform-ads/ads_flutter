@@ -1,6 +1,7 @@
 import 'package:equatable_export/equatable.dart';
 
 class Customer extends Equatable {
+  final String userId;
   final String username;
   final String? companyName;
   final String? companyId;
@@ -9,6 +10,7 @@ class Customer extends Equatable {
   final Access access;
 
   const Customer({
+    required this.userId,
     required this.username,
     required this.companyName,
     required this.companyId,
@@ -19,6 +21,7 @@ class Customer extends Equatable {
 
   @override
   List<Object?> get props => [
+        userId,
         username,
         companyName,
         companyId,

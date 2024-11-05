@@ -10,6 +10,7 @@ import 'package:landing/landing.dart';
 const platname = 'Growth Sphere';
 
 const customer = Customer(
+  userId: '123',
   username: 'Joao',
   companyName: 'tradex',
   firstLogin: true,
