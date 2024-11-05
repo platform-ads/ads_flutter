@@ -25,6 +25,8 @@ dependencies:
     path: ../services/firebase_manager
   material_design_icons_export:
     path: ../services/commons/dependencies/material_design_icons
+  equatable_export:
+    path: ../services/commons/dependencies/equatable
   
 
   home:

@@ -127,7 +127,7 @@ packages:
     source: hosted
     version: "8.9.2"
   cargo:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../cargo"
       relative: true
@@ -237,7 +237,7 @@ packages:
     source: hosted
     version: "2.0.5"
   equatable_export:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../services/commons/dependencies/equatable"
       relative: true
@@ -407,7 +407,7 @@ packages:
     source: hosted
     version: "8.1.6"
   flutter_bloc_export:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../services/commons/dependencies/flutter_bloc"
       relative: true

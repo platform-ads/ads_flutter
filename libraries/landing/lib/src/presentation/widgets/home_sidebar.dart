@@ -1,4 +1,3 @@
-import 'package:cargo/cargo.dart';
 import 'package:core/utils/system_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router_export/go_router.dart';
@@ -70,15 +69,6 @@ class _HomeSidebarState extends State<HomeSidebar> {
         margin: EdgeInsets.only(right: 10),
       ),
       footerDivider: Divider(color: SystemColors.lightest.withOpacity(0.3), height: 1),
-      headerBuilder: (context, extended) {
-        return SizedBox(
-          height: 100,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset(CargoIllustrations.images.avatar), //TODO (rodrigo): check why not loading image here
-          ),
-        );
-      },
       controller: widget.controller,
       items: [
         const SidebarXItem(icon: Icons.home, label: LandingStrings.home),

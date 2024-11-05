@@ -1,15 +1,19 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
+import 'package:core/entities/customer.dart';
 import 'package:core/utils/system_colors.dart';
 import 'package:feature_flag/firebase/firebase_feature_flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_export/get_it.dart';
 import 'package:landing/landing.dart';
 import 'package:material_design_icons_export/material_design_icons.dart';
+import 'package:secure_storage/secure_storage.dart';
 
 class HomePageWebWidget extends StatefulWidget {
+  final Customer customer;
   const HomePageWebWidget({
+    required this.customer,
     super.key,
   });
 
@@ -24,11 +28,27 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   var token = 'token não encontrado';
   var accountsJson = '';
 
+  final remoteConfig = GetIt.I.get<FirebaseFeatureFlag>();
+  final secureStorage = GetIt.I.get<SecureStorageService>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final remoteConfig = GetIt.I.get<FirebaseFeatureFlag>();
     final appId = remoteConfig.getString('app_id_facebook');
     final redirectUri = remoteConfig.getString('redirect_uri');
+    if (widget.customer.firstLogin == true) {
+      Future.delayed(const Duration(milliseconds: 500), () {
+        if (context.mounted) {
+          // ignore: use_build_context_synchronously
+          _showDialog(context, appId, redirectUri);
+        }
+      });
+    }
+
     return Scaffold(
       backgroundColor: SystemColors.scaffoldBackgroundColor,
       body: Row(
@@ -79,6 +99,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   }
 
   Future<void> _showDialog(BuildContext context, String appId, String redirectUri) {
+    secureStorage.write('user_id', widget.customer.userId);
     return showDialog(
         context: context,
         builder: (context) {
