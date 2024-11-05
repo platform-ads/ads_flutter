@@ -13,8 +13,18 @@ dependencies:
   cupertino_icons: ^1.0.8
   core:
     path: ../../core
-  commons:
-    path: ../../services/commons
+  flutter_bloc_export:
+    path: ../../services/commons/dependencies/flutter_bloc
+  go_router_export:
+    path: ../../services/commons/dependencies/go_router
+  get_it_export:
+    path: ../../services/commons/dependencies/get_it
+  injectable_export:
+    path: ../../services/commons/dependencies/injectable
+  material_design_icons_export:
+    path: ../../services/commons/dependencies/material_design_icons
+  equatable_export:
+    path: ../../services/commons/dependencies/equatable
 
 dev_dependencies:
   flutter_test:

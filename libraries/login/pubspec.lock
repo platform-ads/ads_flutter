@@ -57,13 +57,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
-  commons:
-    dependency: "direct main"
-    description:
-      path: "../../services/commons"
-      relative: true
-    source: path
-    version: "0.0.1"
   core:
     dependency: "direct main"
     description:
@@ -71,13 +64,6 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
-  cubit_export:
-    dependency: "direct overridden"
-    description:
-      path: "../../services/commons/lib/cubit_export"
-      relative: true
-    source: path
-    version: "0.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -94,6 +80,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.7.0"
+  dio_export:
+    dependency: transitive
+    description:
+      path: "../../services/commons/dependencies/dio"
+      relative: true
+    source: path
+    version: "0.0.1"
   dio_web_adapter:
     dependency: transitive
     description:
@@ -110,6 +103,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.5"
+  equatable_export:
+    dependency: "direct main"
+    description:
+      path: "../../services/commons/dependencies/equatable"
+      relative: true
+    source: path
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -257,6 +257,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.6"
+  flutter_bloc_export:
+    dependency: "direct main"
+    description:
+      path: "../../services/commons/dependencies/flutter_bloc"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -283,6 +290,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.7.0"
+  get_it_export:
+    dependency: "direct main"
+    description:
+      path: "../../services/commons/dependencies/get_it"
+      relative: true
+    source: path
+    version: "0.0.1"
   go_router:
     dependency: transitive
     description:
@@ -291,6 +305,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.3.0"
+  go_router_export:
+    dependency: "direct main"
+    description:
+      path: "../../services/commons/dependencies/go_router"
+      relative: true
+    source: path
+    version: "0.0.1"
   home:
     dependency: transitive
     description:
@@ -314,6 +335,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.5.0"
+  injectable_export:
+    dependency: "direct main"
+    description:
+      path: "../../services/commons/dependencies/injectable"
+      relative: true
+    source: path
+    version: "0.0.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -370,6 +398,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.1"
+  material_design_icons_export:
+    dependency: "direct main"
+    description:
+      path: "../../services/commons/dependencies/material_design_icons"
+      relative: true
+    source: path
+    version: "0.0.1"
   material_design_icons_flutter:
     dependency: transitive
     description:

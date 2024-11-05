@@ -4,6 +4,7 @@ import 'dart:html' as html;
 import 'package:feature_flag/firebase/firebase_feature_flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_export/get_it.dart';
+import 'package:go_router_export/go_router.dart';
 import 'package:material_design_icons_export/material_design_icons.dart';
 
 class HomePageWebWidget extends StatefulWidget {

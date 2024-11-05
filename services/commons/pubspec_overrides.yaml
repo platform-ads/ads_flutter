@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: cubit_export
-dependency_overrides:
-  cubit_export:
-    path: lib/cubit_export
