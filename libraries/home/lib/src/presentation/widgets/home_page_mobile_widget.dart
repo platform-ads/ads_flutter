@@ -1,7 +1,12 @@
+import 'package:core/entities/customer.dart';
 import 'package:flutter/material.dart';
 
 class HomePageMobileWidget extends StatelessWidget {
-  const HomePageMobileWidget({super.key});
+  final Customer customer;
+  const HomePageMobileWidget({
+    super.key,
+    required this.customer,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,12 +1,22 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
+import 'package:core/entities/customer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router_export/go_router.dart';
 import 'package:home/home.dart';
 import 'package:landing/landing.dart';
 
 const platname = 'Growth Sphere';
+
+const customer = Customer(
+  username: 'Joao',
+  companyName: 'tradex',
+  firstLogin: true,
+  companyId: 'asd123',
+  role: 'ADMIN',
+  access: Access(token: '', refresh: ''),
+);
 
 final GoRouter coreRouter = GoRouter(routes: [
   GoRoute(
@@ -20,7 +30,9 @@ final GoRouter coreRouter = GoRouter(routes: [
   GoRoute(
     path: '/home',
     name: '/home',
-    builder: (context, state) => const HomePage(),
+    builder: (context, state) => HomePage(
+      customer: state.extra as Customer,
+    ),
   ),
   GoRoute(
     path: '/user/auth',
@@ -30,7 +42,9 @@ final GoRouter coreRouter = GoRouter(routes: [
       if (code != null) {
         return AuthPage(code: code);
       }
-      return const HomePage();
+      return HomePage(
+        customer: state.extra as Customer,
+      );
     },
   ),
 ], observers: [
