@@ -21,16 +21,17 @@ class CustomerModel extends Equatable {
   final AccessModel access;
 
   factory CustomerModel.fromEntity(Customer entity) => CustomerModel(
+        userId: entity.userId,
         username: entity.username,
         companyName: entity.companyName,
         firstLogin: entity.firstLogin,
         companyId: entity.companyId,
         role: entity.role,
         access: AccessModel.fromEntity(entity.access),
-        userId: entity.userId,
       );
 
   Customer toEntity() => Customer(
+        userId: userId,
         username: username,
         companyName: companyName,
         firstLogin: firstLogin,
@@ -42,6 +43,7 @@ class CustomerModel extends Equatable {
   @override
   List<Object?> get props {
     return [
+      userId,
       username,
       companyName,
       companyId,
@@ -53,10 +55,11 @@ class CustomerModel extends Equatable {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'id': userId,
       'username': username,
-      'companyName': companyName,
-      'companyId': companyId,
-      'firstLogin': firstLogin,
+      'company_name': companyName,
+      'company_id': companyId,
+      'first_login': firstLogin,
       'role': role,
       'access': access.toJson(),
     };
@@ -64,10 +67,11 @@ class CustomerModel extends Equatable {
 
   factory CustomerModel.fromJson(Map<String, dynamic> json) {
     return CustomerModel(
+      userId: json['id'],
       username: json['username'],
       companyName: json['company_name'] ?? '',
       companyId: json['company_id'] ?? '',
-      firstLogin: json['firstLogin'],
+      firstLogin: json['first_login'],
       role: json['role'],
       access: AccessModel.fromJson(json['access']),
     );
