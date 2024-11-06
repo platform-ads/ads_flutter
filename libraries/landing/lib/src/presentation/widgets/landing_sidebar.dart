@@ -71,7 +71,7 @@ class _LandingSidebarState extends State<LandingSidebar> {
           icon: Icons.login,
           label: LandingStrings.signIn,
           selectable: false,
-          onTap: () => context.pushReplacementNamed('/login'), //TODO (manoel): update to our route
+          onTap: () => context.pushReplacementNamed('/login'),
         ),
         const SidebarXItem(icon: Icons.info, label: LandingStrings.aboutUs),
         const SidebarXItem(icon: Icons.contact_mail, label: LandingStrings.contact),

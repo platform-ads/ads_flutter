@@ -51,6 +51,7 @@ final GoRouter coreRouter = GoRouter(routes: [
   ),
   GoRoute(
     path: '/login',
+    name: '/login',
     builder: (context, state) => const LoginPage(),
   ),
 ], observers: [

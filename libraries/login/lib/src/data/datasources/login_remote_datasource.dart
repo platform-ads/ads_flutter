@@ -1,7 +1,8 @@
 import 'package:core/main.dart';
+import 'package:core/models/customer_model.dart';
 
 abstract class LoginRemoteDatasource {
-  Future<String> loginToAPi(String email, String password);
+  Future<CustomerModel> loginToAPi(String username, String password);
 }
 
 class LoginRemoteDatasourceImpl implements LoginRemoteDatasource {
@@ -10,8 +11,18 @@ class LoginRemoteDatasourceImpl implements LoginRemoteDatasource {
   LoginRemoteDatasourceImpl(this.apiClient);
 
   @override
-  Future<String> loginToAPi(String email, String password) {
-    // TODO: implement loginToAPi
-    throw UnimplementedError();
+  Future<CustomerModel> loginToAPi(String username, String password) async {
+    try {
+      final response = await apiClient.postRequest(
+        endpoint: '/login/',
+        data: {
+          'username': username,
+          'password': password,
+        },
+      );
+      return response.data;
+    } on Exception catch (e) {
+      throw Exception(e);
+    }
   }
 }

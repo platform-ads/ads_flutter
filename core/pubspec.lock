@@ -127,7 +127,7 @@ packages:
     source: hosted
     version: "8.9.2"
   cargo:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../cargo"
       relative: true
@@ -415,7 +415,7 @@ packages:
     source: hosted
     version: "8.1.6"
   flutter_bloc_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../services/commons/dependencies/flutter_bloc"
       relative: true
@@ -849,7 +849,7 @@ packages:
     source: hosted
     version: "4.1.0"
   secure_storage:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../services/secure_storage"
       relative: true
@@ -1093,5 +1093,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.5.3 <4.0.0"
+  dart: ">=3.5.0 <4.0.0"
   flutter: ">=3.24.0"
