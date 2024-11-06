@@ -5,7 +5,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.3
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -23,17 +23,26 @@ dependencies:
     path: ../services/feature_flag
   firebase_manager:
     path: ../services/firebase_manager
-  home:
-    path: ../libraries/home
+ 
   login:
     path: ../libraries/login
+  material_design_icons_export:
+    path: ../services/commons/dependencies/material_design_icons
+  equatable_export:
+    path: ../services/commons/dependencies/equatable
+  
+
+  home:
+    path: ../libraries/home
+  landing:
+    path: ../libraries/landing
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
-  build_runner: ^2.4.13
-  injectable_generator: ^2.6.2
+  build_runner: ^2.1.0
+  injectable_generator: ^2.1.0
   
 
 flutter:

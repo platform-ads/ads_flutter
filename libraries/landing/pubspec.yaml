@@ -1,0 +1,39 @@
+name: landing
+description: "A package contains Landing page for web"
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sidebarx: ^0.17.1
+  flutter_bloc_export:
+    path: ../../services/commons/dependencies/flutter_bloc
+  go_router_export:
+    path: ../../services/commons/dependencies/go_router
+  get_it_export:
+    path: ../../services/commons/dependencies/get_it
+  injectable_export:
+    path: ../../services/commons/dependencies/injectable
+  material_design_icons_export:
+    path: ../../services/commons/dependencies/material_design_icons
+  equatable_export:
+    path: ../../services/commons/dependencies/equatable
+  core:
+    path: ../../core
+  cargo:
+    path: ../../cargo
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.1.0
+  injectable_generator: ^2.1.0
+
+flutter:
+  uses-material-design: true

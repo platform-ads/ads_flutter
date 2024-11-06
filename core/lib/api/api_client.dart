@@ -11,7 +11,7 @@ class ApiClientImpl implements ApiClient {
   final Dio _dio = GetIt.I.get<Dio>();
   initDio() {
     Dio(BaseOptions(
-      baseUrl: '', //TODO (rodrigo): add base Url when api was a domain
+      baseUrl: 'https://grow-sphere-luisbonifacio.pythonanywhere.com/api',
       connectTimeout: const Duration(milliseconds: 5000),
       receiveTimeout: const Duration(milliseconds: 3000),
     ));

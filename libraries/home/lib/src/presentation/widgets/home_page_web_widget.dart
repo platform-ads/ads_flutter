@@ -1,14 +1,19 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
+import 'package:core/entities/customer.dart';
+import 'package:core/utils/system_colors.dart';
 import 'package:feature_flag/firebase/firebase_feature_flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_export/get_it.dart';
-import 'package:go_router_export/go_router.dart';
+import 'package:landing/landing.dart';
 import 'package:material_design_icons_export/material_design_icons.dart';
+import 'package:secure_storage/secure_storage.dart';
 
 class HomePageWebWidget extends StatefulWidget {
+  final Customer customer;
   const HomePageWebWidget({
+    required this.customer,
     super.key,
   });
 
@@ -18,77 +23,64 @@ class HomePageWebWidget extends StatefulWidget {
 
 class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   TextEditingController controller = TextEditingController();
+  SidebarXController sidebarXController = SidebarXController(selectedIndex: 0);
 
   var token = 'token não encontrado';
   var accountsJson = '';
 
+  final remoteConfig = GetIt.I.get<FirebaseFeatureFlag>();
+  final secureStorage = GetIt.I.get<SecureStorageService>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final remoteConfig = GetIt.I.get<FirebaseFeatureFlag>();
     final appId = remoteConfig.getString('app_id_facebook');
     final redirectUri = remoteConfig.getString('redirect_uri');
+    if (widget.customer.firstLogin == true) {
+      Future.delayed(const Duration(milliseconds: 500), () {
+        if (context.mounted) {
+          // ignore: use_build_context_synchronously
+          _showDialog(context, appId, redirectUri);
+        }
+      });
+    }
+
     return Scaffold(
-      appBar: AppBar(
-        elevation: 10,
-        actions: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () {
-                  context.go("/login");
-                },
-                child: const Text(
-                  'Início',
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Graficos',
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-              ),
-              IconButton.outlined(
-                onPressed: () async {
-                  return await _showDialog(
-                    context,
-                    appId,
-                    redirectUri,
-                  );
-                },
-                icon: Icon(MdiIcons.linkVariant),
-              ),
-              const SizedBox(width: 30)
-            ],
-          )
-        ],
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      backgroundColor: SystemColors.scaffoldBackgroundColor,
+      body: Row(
         children: [
-          const Center(
-            child: Text('Home Web'),
+          HomeSidebar(
+            controller: sidebarXController,
+            openDialog: () => _showDialog(context, appId, redirectUri),
           ),
-          const SizedBox(height: 10),
-          Center(
-            child: SizedBox(
-              width: 400,
-              child: TextFormField(
-                controller: controller,
-                decoration: const InputDecoration(
-                  label: Text('Insira seu code do link aqui e clique no botão abaixo para validar'),
-                ),
-                onChanged: (value) {
-                  setState(() {
-                    controller.text = value;
-                  });
-                },
-              ),
+          Expanded(
+            child: AnimatedBuilder(
+              animation: sidebarXController,
+              builder: (context, child) {
+                switch (sidebarXController.selectedIndex) {
+                  case 0:
+                    return const Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Text('Home Web'),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    );
+                  case 1:
+                  default:
+                    return const Text(
+                      'Page not created yet ',
+                    );
+                }
+              },
             ),
           ),
-          const SizedBox(height: 10),
         ],
       ),
     );
@@ -107,28 +99,28 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   }
 
   Future<void> _showDialog(BuildContext context, String appId, String redirectUri) {
+    secureStorage.write('user_id', widget.customer.userId);
     return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Integrações'),
-          actions: [
-            ElevatedButton(
-              onPressed: () => loginWithFacebook(
-                appId,
-                redirectUri,
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('Integrações'),
+            actions: [
+              ElevatedButton(
+                onPressed: () => loginWithFacebook(
+                  appId,
+                  redirectUri,
+                ),
+                child: Row(
+                  children: [
+                    const Text('Integrar com o Facebook ADS'),
+                    const SizedBox(width: 10),
+                    Icon(MdiIcons.facebook),
+                  ],
+                ),
               ),
-              child: Row(
-                children: [
-                  const Text('Integrar com o Facebook ADS'),
-                  const SizedBox(width: 10),
-                  Icon(MdiIcons.facebook),
-                ],
-              ),
-            ),
-          ],
-        );
-      },
-    );
+            ],
+          );
+        });
   }
 }
