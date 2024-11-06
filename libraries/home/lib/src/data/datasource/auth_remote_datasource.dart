@@ -13,15 +13,12 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   @override
   Future<String> sendCodeToApi(String code, String appId, String clientSecret) async {
     try {
-      final response = await apiClient.getRequest(
-        endpoint: '/login/',
-        queryParameters: {
+      final response = await apiClient.postRequest(
+        endpoint: 'facebook/auth/',
+        data: {
           "code": code,
-          "client_id": appId,
-          "client_secret": clientSecret,
         },
       );
-
       return response.data;
     } on Exception catch (e) {
       throw Exception(e);

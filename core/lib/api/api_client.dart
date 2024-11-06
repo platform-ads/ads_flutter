@@ -1,5 +1,6 @@
 import 'package:dio_export/dio.dart';
 import 'package:get_it_export/get_it.dart';
+import 'package:secure_storage/secure_storage.dart';
 
 abstract class ApiClient {
   Future<Response> getRequest({required String endpoint, Map<String, dynamic>? queryParameters});
@@ -9,6 +10,7 @@ abstract class ApiClient {
 
 class ApiClientImpl implements ApiClient {
   final Dio _dio = GetIt.I.get<Dio>();
+  final secureStorage = GetIt.I.get<SecureStorageService>();
   initDio() {
     Dio(BaseOptions(
       baseUrl: 'https://grow-sphere-luisbonifacio.pythonanywhere.com/api',
@@ -16,6 +18,21 @@ class ApiClientImpl implements ApiClient {
       receiveTimeout: const Duration(milliseconds: 3000),
     ));
     _dio.interceptors.add(LogInterceptor(responseBody: true));
+    _dio.interceptors.add(InterceptorsWrapper(
+      onRequest: (options, handler) async {
+        final token = await secureStorage.read('auth_token');
+        if (token != null) {
+          options.headers['Authorization'] = 'Bearer $token';
+        }
+        handler.next(options);
+      },
+      onError: (DioException e, handler) {
+        if (e.response?.statusCode == 401) {
+          //TODO (rodrigo): implement way to use refresh token if is valid or return a exception to throw user to login
+        }
+        handler.next(e);
+      },
+    ));
   }
 
   @override
