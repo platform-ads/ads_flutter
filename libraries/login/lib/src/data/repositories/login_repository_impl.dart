@@ -1,4 +1,4 @@
-import 'package:core/models/customer_model.dart';
+import 'package:core/entities/customer.dart';
 import 'package:login/src/data/datasources/login_remote_datasource.dart';
 import 'package:login/src/domain/repositories/login_repository.dart';
 
@@ -8,9 +8,9 @@ class LoginRepositoryImpl implements LoginRepository {
   LoginRepositoryImpl(this.loginRemoteDatasource);
 
   @override
-  Future<CustomerModel> getLogin(String username, String password) async {
+  Future<Customer> getLogin(String username, String password) async {
     var sucess = await loginRemoteDatasource.loginToAPi(username, password);
-
-    return sucess;
+    final entity = sucess.toEntity();
+    return entity;
   }
 }

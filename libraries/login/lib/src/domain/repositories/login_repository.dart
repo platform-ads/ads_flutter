@@ -1,5 +1,5 @@
-import 'package:core/models/customer_model.dart';
+import 'package:core/entities/customer.dart';
 
 abstract class LoginRepository {
-  Future<CustomerModel> getLogin(String username, String password);
+  Future<Customer> getLogin(String username, String password);
 }
