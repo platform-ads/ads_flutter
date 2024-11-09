@@ -3,6 +3,8 @@ import 'dart:html' as html;
 
 import 'package:core/entities/customer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_export/flutter_bloc.dart';
+import 'package:get_it_export/get_it.dart';
 import 'package:go_router_export/go_router.dart';
 import 'package:home/home.dart';
 import 'package:landing/landing.dart';
@@ -42,7 +44,10 @@ final GoRouter coreRouter = GoRouter(routes: [
   GoRoute(
     path: '/login',
     name: '/login',
-    builder: (context, state) => const LoginPage(),
+    builder: (context, state) => BlocProvider.value(
+      value: GetIt.I.get<LoginCubit>(),
+      child: const LoginPage(),
+    ),
   ),
 ], observers: [
   RouteObserver()

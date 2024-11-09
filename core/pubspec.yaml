@@ -32,6 +32,8 @@ dependencies:
     path: ../services/commons/dependencies/equatable
   secure_storage:
     path: ../services/secure_storage
+  flutter_bloc_export:
+    path: ../services/commons/dependencies/flutter_bloc
   
 
   home:
