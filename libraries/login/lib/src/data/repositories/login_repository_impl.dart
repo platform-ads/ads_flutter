@@ -8,9 +8,9 @@ class LoginRepositoryImpl implements LoginRepository {
   LoginRepositoryImpl(this.loginRemoteDatasource);
 
   @override
-  Future<Customer> getLogin(String username, String password) async {
+  Future<Customer?> getLogin(String username, String password) async {
     var sucess = await loginRemoteDatasource.loginToAPi(username, password);
-    final entity = sucess.toEntity();
+    final entity = sucess?.toEntity();
     return entity;
   }
 }

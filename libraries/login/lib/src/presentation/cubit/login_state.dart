@@ -11,7 +11,11 @@ class LoginInitial extends LoginState {}
 
 class LoginLoading extends LoginState {}
 
-class LoginSucess extends LoginState {}
+class LoginSucess extends LoginState {
+  final Customer customer;
+
+  const LoginSucess(this.customer);
+}
 
 class LoginFailure extends LoginState {
   final String error;

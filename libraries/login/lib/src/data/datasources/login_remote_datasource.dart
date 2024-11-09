@@ -2,7 +2,7 @@ import 'package:core/main.dart';
 import 'package:core/models/customer_model.dart';
 
 abstract class LoginRemoteDatasource {
-  Future<CustomerModel> loginToAPi(String username, String password);
+  Future<CustomerModel?> loginToAPi(String username, String password);
 }
 
 class LoginRemoteDatasourceImpl implements LoginRemoteDatasource {
@@ -11,7 +11,7 @@ class LoginRemoteDatasourceImpl implements LoginRemoteDatasource {
   LoginRemoteDatasourceImpl(this.apiClient);
 
   @override
-  Future<CustomerModel> loginToAPi(String username, String password) async {
+  Future<CustomerModel?> loginToAPi(String username, String password) async {
     try {
       final response = await apiClient.postRequest(
         endpoint: '/login/',
