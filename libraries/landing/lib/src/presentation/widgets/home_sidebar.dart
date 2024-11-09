@@ -1,6 +1,7 @@
 import 'package:core/utils/system_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router_export/go_router.dart';
+import 'package:material_design_icons_export/material_design_icons.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 import '../../utils/landing_strings.dart';
@@ -71,16 +72,16 @@ class _HomeSidebarState extends State<HomeSidebar> {
       footerDivider: Divider(color: SystemColors.lightest.withOpacity(0.3), height: 1),
       controller: widget.controller,
       items: [
-        const SidebarXItem(icon: Icons.home, label: LandingStrings.home),
-        const SidebarXItem(icon: Icons.bar_chart, label: LandingStrings.charts),
+        SidebarXItem(icon: MdiIcons.home, label: LandingStrings.home),
+        SidebarXItem(icon: MdiIcons.chartArc, label: LandingStrings.charts),
         SidebarXItem(
-          icon: Icons.integration_instructions,
+          icon: MdiIcons.puzzlePlus,
           label: LandingStrings.integrations,
           selectable: false,
           onTap: widget.openDialog,
         ),
         SidebarXItem(
-          icon: Icons.exit_to_app,
+          icon: MdiIcons.exitToApp,
           label: LandingStrings.exit,
           selectable: false,
           onTap: () => context.pushReplacementNamed('/'),

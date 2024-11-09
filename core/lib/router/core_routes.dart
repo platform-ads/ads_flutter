@@ -10,16 +10,6 @@ import 'package:login/login.dart';
 
 const platname = 'Growth Sphere';
 
-const customer = Customer(
-  userId: '123',
-  username: 'Joao',
-  companyName: 'tradex',
-  firstLogin: true,
-  companyId: 'asd123',
-  role: 'ADMIN',
-  access: Access(token: '', refresh: ''),
-);
-
 final GoRouter coreRouter = GoRouter(routes: [
   GoRoute(
     path: '/',

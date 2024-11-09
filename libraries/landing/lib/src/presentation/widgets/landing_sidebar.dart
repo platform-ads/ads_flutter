@@ -1,6 +1,7 @@
 import 'package:core/utils/system_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router_export/go_router.dart';
+import 'package:material_design_icons_export/material_design_icons.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 import '../../utils/landing_strings.dart';
@@ -66,15 +67,15 @@ class _LandingSidebarState extends State<LandingSidebar> {
       footerDivider: Divider(color: SystemColors.lightest.withOpacity(0.8), height: 1),
       controller: widget.controller,
       items: [
-        const SidebarXItem(icon: Icons.home, label: LandingStrings.home),
+        SidebarXItem(icon: MdiIcons.home, label: LandingStrings.home),
         SidebarXItem(
-          icon: Icons.login,
+          icon: MdiIcons.account,
           label: LandingStrings.signIn,
           selectable: false,
           onTap: () => context.pushReplacementNamed('/login'),
         ),
-        const SidebarXItem(icon: Icons.info, label: LandingStrings.aboutUs),
-        const SidebarXItem(icon: Icons.contact_mail, label: LandingStrings.contact),
+        SidebarXItem(icon: MdiIcons.informationOutline, label: LandingStrings.aboutUs),
+        SidebarXItem(icon: MdiIcons.emailOutline, label: LandingStrings.contact),
       ],
     );
   }

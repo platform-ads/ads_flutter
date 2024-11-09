@@ -4,6 +4,7 @@ import 'package:core/di/injection.dart';
 import 'package:get_it_export/get_it.dart';
 import 'package:home/home.dart';
 import 'package:injectable_export/injectable.dart';
+import 'package:secure_storage/secure_storage.dart';
 
 import 'injection.config.dart';
 
@@ -13,5 +14,6 @@ final GetIt getIt = GetIt.instance;
 Future<void> configureDependencies() async {
   await configureCoreDependencies(getIt);
   await configureHomeDependencies(getIt);
+  await configureSecureStorageDependencies(getIt);
   await getIt.init();
 }

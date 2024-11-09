@@ -22,6 +22,8 @@ dependencies:
     path: ../../services/commons/dependencies/injectable
   home:
     path: ../../libraries/home
+  secure_storage:
+    path: ../../services/secure_storage
 
 dev_dependencies:
   flutter_test:
