@@ -6,6 +6,7 @@ import 'package:core/utils/system_colors.dart';
 import 'package:feature_flag/firebase/firebase_feature_flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_export/get_it.dart';
+import 'package:home/src/utils/home_strings.dart';
 import 'package:landing/landing.dart';
 import 'package:material_design_icons_export/material_design_icons.dart';
 import 'package:secure_storage/secure_storage.dart';
@@ -40,7 +41,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
   Widget build(BuildContext context) {
     final appId = remoteConfig.getString('app_id_facebook');
     final redirectUri = remoteConfig.getString('redirect_uri');
-    if (widget.customer.firstLogin == true) {
+    if (widget.customer.firstLogin == true && widget.customer.role == HomeStrings.homeCompanyAdminRole) {
       Future.delayed(const Duration(milliseconds: 500), () {
         if (context.mounted) {
           // ignore: use_build_context_synchronously
