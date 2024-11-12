@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: get_it_export,injectable_export
-dependency_overrides:
-  get_it_export:
-    path: ../commons/dependencies/get_it
-  injectable_export:
-    path: ../commons/dependencies/injectable
