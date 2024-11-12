@@ -14,7 +14,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   Future<String> sendCodeToApi(String code, String appId, String clientSecret) async {
     try {
       final response = await apiClient.postRequest(
-        endpoint: 'facebook/auth/',
+        endpoint: '/facebook/auth/',
         data: {
           "code": code,
         },

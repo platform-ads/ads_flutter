@@ -14,13 +14,13 @@ class LoginRemoteDatasourceImpl implements LoginRemoteDatasource {
   Future<CustomerModel?> loginToAPi(String username, String password) async {
     try {
       final response = await apiClient.postRequest(
-        endpoint: '/login/',
+        endpoint: 'login/',
         data: {
           'username': username,
           'password': password,
         },
       );
-      return response.data;
+      return CustomerModel.fromJson(response.data);
     } on Exception catch (e) {
       throw Exception(e);
     }
