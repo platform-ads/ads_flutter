@@ -28,13 +28,13 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   @override
   Future<String> updateUserFirstLogin(String userId) async {
     try {
-      await apiClient.patchRequest(
+      final response = await apiClient.patchRequest(
         endpoint: 'users/$userId/',
         data: {
           'first_login': false,
         },
       );
-      return 'Ok';
+      return response.statusCode == 200 ? 'Ok' : '';
     } on Exception catch (e) {
       throw Exception(e);
     }
