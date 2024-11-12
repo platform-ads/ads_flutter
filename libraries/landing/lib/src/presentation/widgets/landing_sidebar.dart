@@ -72,7 +72,7 @@ class _LandingSidebarState extends State<LandingSidebar> {
           icon: MdiIcons.account,
           label: LandingStrings.signIn,
           selectable: false,
-          onTap: () => context.pushReplacementNamed('/home'), //TODO (manoel): update to our route
+          onTap: () => context.pushReplacementNamed('/login'),
         ),
         SidebarXItem(icon: MdiIcons.informationOutline, label: LandingStrings.aboutUs),
         SidebarXItem(icon: MdiIcons.emailOutline, label: LandingStrings.contact),

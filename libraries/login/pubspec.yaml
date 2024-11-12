@@ -1,6 +1,6 @@
-name: ads_flutter
-description: "A new Flutter project."
-publish_to: 'none'
+name: login
+description: "A new Flutter module project."
+publish_to: none
 version: 1.0.0+1
 
 environment:
@@ -9,23 +9,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_web_plugins:
-    sdk: flutter
+
   cupertino_icons: ^1.0.8
-  firebase_manager:
-    path: ../../services/firebase_manager
   core:
     path: ../../core
+  flutter_bloc_export:
+    path: ../../services/commons/dependencies/flutter_bloc
+  go_router_export:
+    path: ../../services/commons/dependencies/go_router
   get_it_export:
     path: ../../services/commons/dependencies/get_it
   injectable_export:
     path: ../../services/commons/dependencies/injectable
-  home:
-    path: ../../libraries/home
-  secure_storage:
-    path: ../../services/secure_storage
-  login:
-    path: ../../libraries/login
+  material_design_icons_export:
+    path: ../../services/commons/dependencies/material_design_icons
+  equatable_export:
+    path: ../../services/commons/dependencies/equatable
 
 dev_dependencies:
   flutter_test:
@@ -34,10 +33,13 @@ dev_dependencies:
   build_runner: ^2.1.0
   injectable_generator: ^2.1.0
 
+
 flutter:
+ 
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # To add Flutter specific assets to your application, add an assets section,
+  # like this:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -48,9 +50,9 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
+  # To add Flutter specific custom fonts to your application, add a fonts
+  # section here, in this "flutter" section. Each entry in this list should
+  # have a "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
@@ -67,3 +69,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+
+  # This section identifies your Flutter project as a module meant for
+  # embedding in a native host app.  These identifiers should _not_ ordinarily
+  # be changed after generation - they are used to ensure that the tooling can
+  # maintain consistency when adding or modifying assets and plugins.
+  # They also do not have any bearing on your native host application's
+  # identifiers, which may be completely independent or the same as these.
+  module:
+    androidX: true
+    androidPackage: com.example.login
+    iosBundleIdentifier: com.example.login

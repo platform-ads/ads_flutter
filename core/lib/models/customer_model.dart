@@ -67,9 +67,9 @@ class CustomerModel extends Equatable {
 
   factory CustomerModel.fromJson(Map<String, dynamic> json) {
     return CustomerModel(
-      userId: json['id'],
+      userId: json['user_id'],
       username: json['username'],
-      companyName: json['company_name'] ?? '',
+      companyName: json['company'] ?? '',
       companyId: json['company_id'] ?? '',
       firstLogin: json['first_login'],
       role: json['role'],

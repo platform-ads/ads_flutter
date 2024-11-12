@@ -23,12 +23,17 @@ dependencies:
     path: ../services/feature_flag
   firebase_manager:
     path: ../services/firebase_manager
+ 
+  login:
+    path: ../libraries/login
   material_design_icons_export:
     path: ../services/commons/dependencies/material_design_icons
   equatable_export:
     path: ../services/commons/dependencies/equatable
   secure_storage:
     path: ../services/secure_storage
+  flutter_bloc_export:
+    path: ../services/commons/dependencies/flutter_bloc
   
 
   home:

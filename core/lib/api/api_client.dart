@@ -1,71 +1,118 @@
+import 'dart:developer';
+
 import 'package:dio_export/dio.dart';
 import 'package:get_it_export/get_it.dart';
 import 'package:secure_storage/secure_storage.dart';
 
 abstract class ApiClient {
-  Future<Response> getRequest({required String endpoint, Map<String, dynamic>? queryParameters});
-  Future<Response> postRequest({required String endpoint, Map<String, dynamic>? data});
-  Future<Response> patchRequest({required String endpoint, Map<String, dynamic>? data});
+  Future<Response> getRequest(
+      {required String endpoint, Map<String, dynamic>? queryParameters, Map<String, String>? headers});
+  Future<Response> postRequest({required String endpoint, Map<String, dynamic>? data, Map<String, String>? headers});
+  Future<Response> patchRequest({required String endpoint, Map<String, dynamic>? data, Map<String, String>? headers});
 }
 
 class ApiClientImpl implements ApiClient {
-  final Dio _dio = GetIt.I.get<Dio>();
-  final secureStorage = GetIt.I.get<SecureStorageService>();
-  initDio() {
-    Dio(BaseOptions(
-      baseUrl: 'https://grow-sphere-luisbonifacio.pythonanywhere.com/api',
-      connectTimeout: const Duration(milliseconds: 5000),
-      receiveTimeout: const Duration(milliseconds: 3000),
-    ));
+  final Dio _dio;
+  final SecureStorageService _secureStorage;
+
+  ApiClientImpl()
+      : _dio = GetIt.I.get<Dio>(),
+        _secureStorage = GetIt.I.get<SecureStorageService>() {
+    _initializeDio();
+  }
+
+  void _initializeDio() {
+    _dio.options = BaseOptions(
+      baseUrl: 'https://grow-sphere-luisbonifacio.pythonanywhere.com/api/',
+      connectTimeout: const Duration(minutes: 5),
+      receiveTimeout: const Duration(minutes: 3),
+      headers: {
+        'content-type': 'application/json',
+      },
+    );
+
     _dio.interceptors.add(LogInterceptor(responseBody: true));
-    _dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) async {
-        final token = await secureStorage.read('auth_token');
-        if (token != null) {
-          options.headers['Authorization'] = 'Bearer $token';
-        }
-        handler.next(options);
-      },
-      onError: (DioException e, handler) {
-        if (e.response?.statusCode == 401) {
-          //TODO (rodrigo): implement way to use refresh token if is valid or return a exception to throw user to login
-        }
-        handler.next(e);
-      },
-    ));
+    _dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          final token = await _secureStorage.read('auth_token');
+          if (token != null) {
+            options.headers['Authorization'] = 'Bearer $token';
+          }
+          handler.next(options);
+        },
+        onError: (DioException e, handler) {
+          log('tipo de erro no request foi $e');
+          if (e.response?.statusCode == 401) {
+            // TODO: implementar lógica de refresh token ou redirecionar para login
+          }
+          handler.next(e);
+        },
+      ),
+    );
   }
 
-  @override
-  Future<Response> getRequest({required String endpoint, Map<String, dynamic>? queryParameters}) async {
-    initDio();
+  Future<Response> _performRequest(Future<Response> Function() request, String endpoint) async {
     try {
-      final response = await _dio.get(endpoint, queryParameters: queryParameters);
-      return response;
+      return await request();
     } on DioException catch (e) {
       throw _handleError(e);
     }
   }
 
   @override
-  Future<Response> postRequest({required String endpoint, Map<String, dynamic>? data}) async {
-    initDio();
-    try {
-      final response = await _dio.post(endpoint, data: data);
-      return response;
-    } on DioException catch (e) {
-      throw _handleError(e);
-    }
+  Future<Response> getRequest({
+    required String endpoint,
+    Map<String, dynamic>? queryParameters,
+    Map<String, String>? headers,
+  }) {
+    return _performRequest(
+      () => _dio.get(endpoint, queryParameters: queryParameters, options: Options(headers: _mergeHeaders(headers))),
+      endpoint,
+    );
   }
 
   @override
-  Future<Response> patchRequest({required String endpoint, Map<String, dynamic>? data}) async {
-    initDio();
-    try {
-      final response = await _dio.patch(endpoint, data: data);
-      return response;
-    } on DioException catch (e) {
-      throw _handleError(e);
-    }
+  Future<Response> postRequest({
+    required String endpoint,
+    Map<String, dynamic>? data,
+    Map<String, String>? headers,
+  }) {
+    return _performRequest(
+      () => _dio.post(
+        endpoint,
+        data: data,
+        options: Options(
+          headers: _mergeHeaders(headers),
+        ),
+      ),
+      endpoint,
+    );
+  }
+
+  @override
+  Future<Response> patchRequest({
+    required String endpoint,
+    Map<String, dynamic>? data,
+    Map<String, String>? headers,
+  }) {
+    return _performRequest(
+      () => _dio.patch(
+        endpoint,
+        data: data,
+        options: Options(
+          headers: _mergeHeaders(headers),
+        ),
+      ),
+      endpoint,
+    );
+  }
+
+  Map<String, String> _mergeHeaders(Map<String, String>? additionalHeaders) {
+    final defaultHeaders = {
+      'content-type': 'application/json',
+    };
+    return {...defaultHeaders, ...?additionalHeaders};
   }
 
   Exception _handleError(DioException error) {
