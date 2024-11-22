@@ -849,7 +849,7 @@ packages:
     source: hosted
     version: "4.1.0"
   secure_storage:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../../services/secure_storage"
       relative: true

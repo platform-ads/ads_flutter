@@ -35,7 +35,7 @@ class ApiClientImpl implements ApiClient {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
-          final token = await _secureStorage.read('auth_token');
+          final token = await _secureStorage.read(SecureStorageConst.authToken);
           if (token != null) {
             options.headers['Authorization'] = 'Bearer $token';
           }

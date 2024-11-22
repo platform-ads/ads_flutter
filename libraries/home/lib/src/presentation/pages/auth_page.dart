@@ -51,7 +51,7 @@ class _AuthPageState extends State<AuthPage> {
         listener: (context, state) async {
           if (state is AuthSuccess) {
             final userId = await secureStorage.read('user_id');
-            homeCubit.updateFirstLogin(userId!);
+            await homeCubit.updateFirstLogin(userId!);
             context.pushReplacementNamed('/');
           }
         },

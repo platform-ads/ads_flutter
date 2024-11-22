@@ -1,0 +1,30 @@
+# melos_managed_dependency_overrides: cargo,dio_export,equatable_export,feature_flag,firebase_manager,flutter_bloc_export,get_it_export,go_router_export,home,injectable_export,landing,login,material_design_icons_export,secure_storage
+dependency_overrides:
+  cargo:
+    path: ..\\cargo
+  dio_export:
+    path: ..\\services\\commons\\dependencies\\dio
+  equatable_export:
+    path: ..\\services\\commons\\dependencies\\equatable
+  feature_flag:
+    path: ..\\services\\feature_flag
+  firebase_manager:
+    path: ..\\services\\firebase_manager
+  flutter_bloc_export:
+    path: ..\\services\\commons\\dependencies\\flutter_bloc
+  get_it_export:
+    path: ..\\services\\commons\\dependencies\\get_it
+  go_router_export:
+    path: ..\\services\\commons\\dependencies\\go_router
+  home:
+    path: ..\\libraries\\home
+  injectable_export:
+    path: ..\\services\\commons\\dependencies\\injectable
+  landing:
+    path: ..\\libraries\\landing
+  login:
+    path: ..\\libraries\\login
+  material_design_icons_export:
+    path: ..\\services\\commons\\dependencies\\material_design_icons
+  secure_storage:
+    path: ..\\services\\secure_storage

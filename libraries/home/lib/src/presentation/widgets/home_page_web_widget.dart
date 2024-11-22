@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
@@ -42,10 +44,9 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
     final appId = remoteConfig.getString('app_id_facebook');
     final redirectUri = remoteConfig.getString('redirect_uri');
     if (widget.customer.firstLogin == true && widget.customer.role == HomeStrings.homeCompanyAdminRole) {
-      Future.delayed(const Duration(milliseconds: 500), () {
+      Future.delayed(const Duration(milliseconds: 500), () async {
         if (context.mounted) {
-          // ignore: use_build_context_synchronously
-          _showDialog(context, appId, redirectUri);
+          await _showDialog(context, appId, redirectUri);
         }
       });
     }
@@ -56,7 +57,7 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
         children: [
           HomeSidebar(
             controller: sidebarXController,
-            openDialog: () => _showDialog(context, appId, redirectUri),
+            openDialog: () async => await _showDialog(context, appId, redirectUri),
           ),
           Expanded(
             child: AnimatedBuilder(
@@ -99,8 +100,9 @@ class _HomePageWebWidgetState extends State<HomePageWebWidget> {
     return html.window.location.href = url;
   }
 
-  Future<void> _showDialog(BuildContext context, String appId, String redirectUri) {
-    secureStorage.write('user_id', widget.customer.userId);
+  Future<void> _showDialog(BuildContext context, String appId, String redirectUri) async {
+    await secureStorage.write('user_id', widget.customer.userId);
+
     return showDialog(
         context: context,
         builder: (context) {
