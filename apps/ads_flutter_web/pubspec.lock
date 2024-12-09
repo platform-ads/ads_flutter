@@ -127,7 +127,7 @@ packages:
     source: hosted
     version: "8.9.2"
   cargo:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../cargo"
       relative: true
@@ -221,7 +221,7 @@ packages:
     source: hosted
     version: "5.7.0"
   dio_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/commons/dependencies/dio"
       relative: true
@@ -244,7 +244,7 @@ packages:
     source: hosted
     version: "2.0.5"
   equatable_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/commons/dependencies/equatable"
       relative: true
@@ -259,7 +259,7 @@ packages:
     source: hosted
     version: "1.3.1"
   feature_flag:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/feature_flag"
       relative: true
@@ -422,7 +422,7 @@ packages:
     source: hosted
     version: "8.1.6"
   flutter_bloc_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/commons/dependencies/flutter_bloc"
       relative: true
@@ -534,7 +534,7 @@ packages:
     source: hosted
     version: "14.3.0"
   go_router_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/commons/dependencies/go_router"
       relative: true
@@ -619,7 +619,7 @@ packages:
     source: hosted
     version: "4.9.0"
   landing:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../libraries/landing"
       relative: true
@@ -697,7 +697,7 @@ packages:
     source: hosted
     version: "0.11.1"
   material_design_icons_export:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../services/commons/dependencies/material_design_icons"
       relative: true

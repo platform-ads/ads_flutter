@@ -20,7 +20,7 @@ class LoginRemoteDatasourceImpl implements LoginRemoteDatasource {
           'password': password,
         },
       );
-      return response.data;
+      return CustomerModel.fromJson(response.data);
     } on Exception catch (e) {
       throw Exception(e);
     }
